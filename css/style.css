@@ -1,0 +1,350 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&&family=Teko&display=swap');
+/* font awesome cdn link */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css');
+
+:root {
+   --main-color: #1D5D9B;
+   --main-color-hover: #2b73ba;
+   --white: #fff;
+   --light-bg: #eee;
+   --btn: #212529;
+   --hover-btn: #dfdfdf;
+   --text-color: black;
+   --red: #e74c3c;
+   --red-hover: #dd5f51;
+   --border: .1rem solid rgba(0, 0, 0, .2);
+}
+
+.dark-theme {
+   --white: rgb(43, 48, 53);
+   --light-bg: #212529;
+   --btn: #eee;
+   --hover-btn: #15181c;
+   --text-color: white;
+   --border: .1rem solid rgba(111, 111, 111, 0.2);
+}
+
+* {
+   font-family: 'Raleway', sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   outline: none;
+   border: none;
+   text-decoration: none;
+   /* border: 1px solid red; */
+}
+
+*::selection {
+   background-color: var(--main-color);
+   color: #fff;
+}
+
+/* Header --*/
+.header {
+   position: fixed;
+   display: flex;
+   background-color: var(--white);
+   justify-content: space-between;
+   width: 100%;
+   height: 3rem;
+   align-items: center;
+   border-bottom: var(--border);
+   gap: .4rem;
+   padding: 0 .7rem;
+   z-index: 100;
+}
+
+/* -logo */
+.header .icons .logo {
+   font-size: 1.5rem;
+   font-weight: 600;
+   font-family: 'Teko';
+   color: var(--text-color);
+}
+
+/* -grup icons */
+.header nav {
+   display: flex;
+   margin-left: auto;
+   gap: .3rem;
+}
+
+/* --icons */
+.header .icons div {
+   color: var(--btn);
+   background-color: var(--light-bg);
+   height: 2rem;
+   width: 2rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   border-radius: 100vh;
+}
+
+/* -- -hover */
+.header .icons div:hover {
+   color: var(--text-color);
+   background-color: var(--hover-btn);
+}
+
+/* Container */
+.container {
+   position: absolute;
+   top: 3rem;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   display: flex;
+   flex-wrap: wrap;
+   /* flex-direction: column; */
+   justify-content: center;
+   align-items: center;
+   gap: .4rem;
+   padding: .4rem;
+   background-color: var(--light-bg);
+   color: var(--text-color);
+   overflow-y: auto;
+}
+
+.container .content {
+   /* padding: .4rem; */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: min(99%, 40rem);
+}
+
+.container .content .content-header {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: var(--border);
+   border-top-left-radius: .4rem;
+   border-top-right-radius: .4rem;
+   width: 100%;
+   background-color: var(--white);
+   padding: .4rem;
+}
+
+.container .content .content-body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border-bottom: var(--border);
+   border-left: var(--border);
+   border-right: var(--border);
+   border-bottom-left-radius: .4rem;
+   border-bottom-right-radius: .4rem;
+   width: 100%;
+   padding: 1.5rem;
+   min-height: 10rem;
+   gap: 1rem;
+   background-color: var(--light-bg);
+}
+
+/* -Pomodoro-timer */
+.container .pomodoro-timer .content-body {
+   justify-content: center;
+}
+
+#break,
+#work {
+   cursor: pointer;
+}
+
+#start,
+#reset {
+   padding: .6rem;
+   border-radius: .4rem;
+   cursor: pointer;
+   font-size: medium;
+   color: white;
+}
+
+#start {
+   background-color: var(--main-color);
+}
+#reset {
+   background-color: var(--red);
+}
+#start:hover {
+   background-color: var(--main-color-hover);
+}
+#reset:hover {
+   background-color: var(--red-hover);
+}
+
+/* -Todo-list */
+.container .todo-list .content-body {
+   margin-bottom: .4rem;
+}
+.container .todo-list .content-body .input {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   /* justify-content: space-between; */
+}
+
+.container .todo-list .content-body .input input {
+   width: calc(100% - 7rem);
+   /* for button space */
+   color: var(--text-color);
+   background-color: var(--white);
+   border-top-left-radius: 100vh;
+   border-bottom-left-radius: 100vh;
+   padding: 0 1rem;
+   height: 2rem;
+}
+
+#addTask {
+   border-top-right-radius: 100vh;
+   border-bottom-right-radius: 100vh;
+   padding: 0 1rem;
+   height: 2rem;
+   cursor: pointer;
+   font-size: medium;
+   background-color: var(--main-color);
+   color: white;
+}
+
+#addTask:hover{
+   background-color: var(--main-color-hover);
+}
+
+.container .todo-list .content-body .list {
+   display: flex;
+   width: 100%;
+}
+
+.container .todo-list .content-body .list ul {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   width: 100%;
+   gap: .4rem;
+}
+
+.container .todo-list .content-body .list ul li {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   width: 100%;
+   gap: .4rem;
+}
+
+.container .todo-list .content-body .list ul li label {
+   font-size: 1.2rem;
+   max-width: 90%;
+   word-wrap: break-word;
+}
+
+.container .todo-list .content-body .list ul li .delete-task-btn {
+   padding: .2rem;
+   background-color: red;
+   border-radius: .4rem;
+   width: 1.3rem;
+   height: 1.3rem;
+   color: white;
+}
+
+#taskList{
+   list-style: none;
+}
+
+
+
+/* .container .todo-list .content-body .list {
+   
+} */
+
+
+/* Circle Animation */
+/* Sets the containers height and width */
+.base-timer {
+   position: relative;
+   height: 300px;
+   width: 300px;
+}
+
+/* Removes SVG styling that would hide the time label */
+.base-timer__circle {
+   fill: none;
+   stroke: none;
+}
+
+/* The SVG path that displays the timer's progress */
+.base-timer__path-elapsed {
+   stroke-width: 7px;
+   stroke: grey;
+}
+
+.base-timer__label {
+   position: absolute;
+
+   /* Size should match the parent container */
+   width: 300px;
+   height: 300px;
+
+   /* Keep the label aligned to the top */
+   top: 0;
+
+   /* Create a flexible box that centers content vertically and horizontally */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   /* Sort of an arbitrary number; adjust to your liking */
+   font-size: 48px;
+}
+
+.base-timer__path-remaining {
+   /* Just as thick as the original ring */
+   stroke-width: 7px;
+
+   /* Rounds the line endings to create a seamless circle */
+   stroke-linecap: round;
+
+   /* Makes sure the animation starts at the top of the circle */
+   transform: rotate(90deg);
+   transform-origin: center;
+
+   /* One second aligns with the speed of the countdown timer */
+   transition: 1s linear all;
+
+   /* Allows the ring to change color when the color value updates */
+   stroke: currentColor;
+}
+
+.base-timer__svg {
+   /* Flips the svg and makes the animation to move left-to-right */
+   transform: scaleX(-1);
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+   width: .8rem; /*apply to all*/
+   height: .8rem;
+   background-color: var(--light-bg);
+}
+ 
+::-webkit-scrollbar-track {
+   background-color: gray;
+   border-radius: 100vw;
+   margin-block: .2rem;
+}
+ 
+::-webkit-scrollbar-thumb {
+   background-color: rgb(43, 48, 53);
+   border-radius: 100vw;
+   border: .1rem solid gray;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background-color: rgb(57, 63, 68);
+}

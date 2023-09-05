@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PomoList</title>
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+   <header class="header">
+      <div class="icons">
+         <a href="index.html" class="logo">PomoList</a>
+      </div>
+      <nav class="icons">
+         <div id="home-btn" class="fa fa-home"></div>
+         <div id="theme-btn" class="fa fa-sun"></div>
+      </nav>
+   </header>
+   
+   <div class="container">
+      <section class="content pomodoro-timer">
+         <div class="content-header">
+            <h2>Pomodoro Timer</h2>
+         </div>
+         <div class="content-body">
+            <h2><span id="work">Work</span> <span id="break">Break</span></h2>
+            <div class="base-timer">
+               <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                 <g class="base-timer__circle">
+                   <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                   <path
+                     id="base-timer-path-remaining"
+                     stroke-dasharray="283"
+                     class="base-timer__path-remaining"
+                     d="
+                       M 50, 50
+                       m -45, 0
+                       a 45,45 0 1,0 90,0
+                       a 45,45 0 1,0 -90,0
+                     "
+                     style="color:red"
+                   ></path>
+                 </g>
+               </svg>
+               <span id="base-timer-label" class="base-timer__label">
+                 <h1 class="time-display" id="time">25:00</h1>
+               </span>
+             </div>
+            <div>
+               <button id="start">Start</button>
+               <button id="reset">Reset</button>
+            </div>
+         </div>
+      </section>
+      <section class="content todo-list">
+         <div class="content-header">
+            <h2>To-Do List</h2>
+         </div>
+         <div class="content-body">
+            <div class="input">
+               <input type="text" id="task" placeholder="Add a new task...">
+               <button type="submit" class="btn" id="addTask">Add Task</button>
+            </div>
+            <div class="list">
+               <ul id="taskList"></ul>
+            </div>
+         </div>
+      </section>
+   </div>
+
+   <script src="js/script.js"></script>
+</body>
+
+</html>
